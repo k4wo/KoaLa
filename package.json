@@ -1,0 +1,17 @@
+{
+  "name": "koala",
+  "version": "1.0.0",
+  "description": "KoaLa is a skeleton which will help in future to create new projects. Base from what everything will begin.",
+  "main": "index.js",
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-router": "^7.2.1",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "k4wo",
+  "license": "MIT"
+}
