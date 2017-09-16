@@ -1,21 +1,19 @@
-const fs = require('fs');
-const path = require('path');
-const { promisify } = require('util');
 const Koa = require('koa');
 const winston = require('winston');
+
+const getDirFiles = require('./lib/getDirFiles');
 
 const App = new Koa();
 
 const start = async () => {
   winston.info('Booting...');
-  
-  try {
-    const readdir = promisify(fs.readdir);
-    const routesDir = path.resolve(__dirname, 'routes');
-    const fileRoutes = await readdir(routesDir);
-    fileRoutes.forEach(file => require(`${routesDir}/${file}`)(App));
 
-    winston.info('Routes has been set');
+  try {
+    winston.info('Loading routes...');
+    const routes = await getDirFiles('route');
+    routes.forEach(route => require(route)(App));
+
+    window.info('Server is reaady!')
   } catch (error) {
     winston.error(error);
   }
