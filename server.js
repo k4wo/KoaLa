@@ -49,15 +49,15 @@ class KoaLa {
 
   async loadAndAssign(path, assignTo) {
     try {
-      const services = await getDirFiles(path);
-      services.forEach((service) => {
-        const loadedService = require(service);
-        const { name } = loadedService;
+      const filesList = await getDirFiles(path);
+      filesList.forEach((file) => {
+        const loadedModule = require(file);
+        const { name } = loadedModule;
 
         if (name) {
-          assignTo[name] = loadedService;
+          assignTo[name] = loadedModule;
         } else {
-          this.logError(`Wasn't loaded due lack of name: ${service}`);
+          this.logError(`Module wasn't loaded due lack of name: ${file}`);
         }
       });
     } catch (error) {
