@@ -1,4 +1,4 @@
 
-const auth = app => {};
+const auth = app => {}
 
-module.exports = auth;
+module.exports = auth

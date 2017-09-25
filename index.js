@@ -1,4 +1,4 @@
-const Server = require('./server');
+const Server = require('./server')
 
-const KoaLa = new Server();
-KoaLa.init();
+const KoaLa = new Server()
+KoaLa.init()

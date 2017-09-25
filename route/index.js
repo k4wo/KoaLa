@@ -1,12 +1,12 @@
-var Router = require('koa-router');
+var Router = require('koa-router')
 
 module.exports = ({ app, middleware }) => {
   var router = new Router({
     prefix: '/api'
-  });
+  })
 
-  router.get('/', ctx => ctx.body = 'responseText'); // responds to "/api"
+  router.get('/', ctx => ctx.body = 'responseText') // responds to "/api"
 
-  app.use(router.routes());
-  app.use(router.allowedMethods());
-};
+  app.use(router.routes())
+  app.use(router.allowedMethods())
+}
