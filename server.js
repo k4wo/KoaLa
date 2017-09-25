@@ -1,4 +1,5 @@
 const koa = require('koa');
+const bodyParser = require('koa-bodyparser');
 const winston = require('winston');
 
 const getDirFiles = require('./lib/getDirFiles')();
@@ -9,12 +10,18 @@ class KoaLa {
     this.logInfo = winston.info;
     this.logError = winston.error;
 
-    this.app = new koa();
-    this.app.context.logInfo = this.logInfo;
-    this.app.context.logError = this.logError;
+    this.setUpApp();
 
     this.middleware = {};
     this.server = {};
+  }
+
+  setUpApp() {
+    this.app = new koa();
+    this.app.use(bodyParser());
+
+    this.app.context.logInfo = this.logInfo;
+    this.app.context.logError = this.logError;
   }
 
   async init() {
