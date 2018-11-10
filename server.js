@@ -5,7 +5,6 @@ const getDirFiles = require('./lib/getDirFiles')()
 const stackTraceParser = require('./lib/stackTraceParser')
 const services = require('./services')()
 
-
 class Server {
   constructor (config) {
     this.config = config
