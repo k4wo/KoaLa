@@ -8,6 +8,7 @@
     "dev": "NODE_ENV=development nodemon index.js",
     "debug": "NODE_ENV=development nodemon --inspect-brk index.js",
     "test": "jest --forceExit --detectOpenHandles --silent",
+    "test:watch": "jest --watch",
     "lint": "standard --fix"
   },
   "dependencies": {

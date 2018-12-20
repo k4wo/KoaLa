@@ -2,7 +2,7 @@ const importer = require('node-mysql-importer')
 const prompts = require('prompts')
 const path = require('path')
 
-const MySQL = require('../src/services/db')
+const MySQL = require('../services/mysql')
 const foreignKeys = require('./foreign_keys')
 const defaultConfig = require('../config').mysql
 
@@ -14,7 +14,8 @@ const dbConnection = async config => {
 }
 
 const dropDb = async config => {
-  const db = await dbConnection(config)
+  const conf = { ...config, database: undefined }
+  const db = await dbConnection(conf)
   await db.query(`DROP DATABASE IF EXISTS ${config.database};`)
 
   db.db.end()
