@@ -1,12 +1,12 @@
 module.exports = {
   app: {
-    port: 3077
+    port: process.env.PORT || 3077
   },
   mysql: {
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'db_name',
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || '',
+    database: process.env.DB_NAME || 'my-db',
     nestTables: true
-  }
+  },
 }
