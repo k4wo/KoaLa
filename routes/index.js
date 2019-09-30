@@ -1,7 +1,7 @@
-var Router = require('koa-router')
+const Router = require('koa-router')
 
 module.exports = ({ app, middleware }) => {
-  var router = new Router({
+  const router = new Router({
     prefix: '/'
   })
 
