@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "jest": "^23.6.0",
+    "jest": "^29.3.1",
     "node-mysql-importer": "0.0.10",
     "nodemon": "^1.18.9",
     "prompts": "^1.2.1",
